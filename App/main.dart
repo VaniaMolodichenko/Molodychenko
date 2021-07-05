@@ -3,14 +3,27 @@ import 'dart:io';
 int number = 0;
 
 void main(){
-  switch (stdin.readLineSync()){
+  print("Please write first number: ");
+  var number_1 = double.parse(stdin.readLineSync()!);
+  print("\nPlease write second number: ");
+  var number_2 = double.parse(stdin.readLineSync()!);
+  print("\nWrite what you want to do with numbers. Like example: '+', '-', '*', '/',");
+
+  switch(stdin.readLineSync())
+  {
     case "+":
-      Add(5, 9);
+      print("result: ${number_1 + number_2}");
+      break;
+    case "-":
+      print("result: ${number_1 - number_2}");
+      break;
+    case "*":
+      print("result: ${number_1 * number_2}");
+      break;
+    case "/":
+      print("result: ${number_1 / number_2}");
       break;
   }
-  print(number);
-}
 
-void Add(int a, int b){
-  number = a + b;
+  print(number);
 }
